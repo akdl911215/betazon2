@@ -6,7 +6,7 @@ const SeoulCCTV = () => {
 
     useEffect(() => {
         axios
-            .get('/public/data/SeoulCCTV.json', [])
+            .get('/data/SeoulCCTV.json')
             .then((res) => {
                 console.log(res);
                 setCctvLists(res.data.DATA);
@@ -16,9 +16,7 @@ const SeoulCCTV = () => {
 
     return (
         <>
-            <div className="head_color">
-                <h2>HTML Table</h2>
-            </div>
+            <div className="head_color"></div>
             <table>
                 <tr>
                     <th>No.</th>
@@ -27,17 +25,17 @@ const SeoulCCTV = () => {
                     <th style={{ width: '15%' }}>카메라명칭</th>
                     <th style={{ width: '15%' }}>설명</th>
                 </tr>
-                {
-                    (cctvLists.map = (list, index) => {
+                {cctvLists.map((list, index) => {
+                    return (
                         <tr key={index}>
-                            <td style={{ width: '5%' }}>{index}</td>
+                            <td style={{ width: '5%' }}>{index + 1}</td>
                             <td style={{ width: '15%' }}>{list.checktime}</td>
                             <td style={{ width: '15%' }}>{list.deviceid}</td>
                             <td style={{ width: '15%' }}>{list.devicename}</td>
                             <td style={{ width: '15%' }}>{list.description}</td>
-                        </tr>;
-                    })
-                }
+                        </tr>
+                    );
+                })}
             </table>
         </>
     );

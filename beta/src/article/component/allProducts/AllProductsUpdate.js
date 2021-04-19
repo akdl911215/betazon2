@@ -51,7 +51,7 @@ const AllProductsUpdate = () => {
                 })
                 .catch((err) => console.log(err));
         },
-        [title, wrtier, mainPicture, content, price]
+        [title, writer, mainPicture, content, price]
     );
 
     const handleChange = useCallback(

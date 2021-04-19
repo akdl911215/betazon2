@@ -44,24 +44,22 @@ const AllProductsRead = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr key={detail.allProductsReadNo}>
-                                <td>{detail.allProductsReadNo}</td>
-                                <td>{detail.title}</td>
-                                <td>{detail.writer}</td>
-                                <td>{detail.content}</td>
-                                <td>{detail.price}</td>
+                            <tr key={allProductsRead.allProductsReadNo}>
+                                <td>{allProductsRead.allProductsReadNo}</td>
+                                <td>{allProductsRead.title}</td>
+                                <td>{allProductsRead.writer}</td>
+                                <td>{allProductsRead.content}</td>
+                                <td>{allProductsRead.price}</td>
                             </tr>
                         </tbody>
                     </table>
-
-                    <Link to={`/FeedBoardUpdate/${detail.allProductsReadNo}`}>
+                    <Link to={`/FeedBoardUpdate/${allProductsRead.allProductsReadNo}`}>
                         <button>수정하기</button>
                     </Link>
-
                     <Link to="/FeedBoardList">
                         <button onClick={deleteOne}>삭제하기</button>
                     </Link>
-
+                    allProductsRead
                     <Link to="/FeedBoardList">
                         <button>목록으로</button>
                     </Link>

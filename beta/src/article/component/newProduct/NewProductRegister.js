@@ -1,14 +1,15 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 
 const NewProductRegister = () => {
-    const [newProductRegister, setNewProductRegister] = useState({
+
+    const[newProductRegister, setNewProductRegister] = useState({
         title: '',
         writer: '',
         mainPricture: '',
         price: '',
-    });
+    })
 
-    const [title, writer, mainPricture, content, price] = newProductRegister;
+    const [title. writer, mainPricture, content, price] = newProductRegister
 
     const handleChange = useCallback(
         (e) => {
@@ -16,10 +17,10 @@ const NewProductRegister = () => {
             setNewProductRegister({
                 ...newProductRegister,
                 [name]: value,
-            });
+            })
         },
         [newProductRegister]
-    );
+    )
 
     return <></>;
 };

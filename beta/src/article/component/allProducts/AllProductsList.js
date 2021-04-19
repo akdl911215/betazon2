@@ -37,20 +37,20 @@ const AllProductsList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {fds.map((allProducts) => {
+                    {allProducts.map((allProduct, index) => {
                         return (
-                            <tr key={allProducts.allProductsNo}>
-                                <td>{allProducts.allProductsNo}</td>
-                                <td>{allProducts.title}</td>
-                                <td>{allProducts.writer}</td>
-                                <td>{allProducts.mainPicture}</td>
-                                <td>{allProducts.content}</td>
-                                <td>{allProducts.price}</td>
+                            <tr key={index}>
+                                <td>{allProduct.No}</td>
+                                <td>{allProduct.title}</td>
+                                <td>{allProduct.writer}</td>
+                                <td>{allProduct.mainPicture}</td>
+                                <td>{allProduct.content}</td>
+                                <td>{allProduct.price}</td>
                                 <td>
-                                    <Link to={`/FeedBoardRead/${allProducts.allProductsNo}`} className="linkto-fds">
+                                    <Link to={`/FeedBoardRead/${allProduct.allProductsNo}`} className="linkto-fds">
                                         <button
                                             onClick={() => {
-                                                localStorage.setItem('select', `${allProducts.allProductsNo}`);
+                                                localStorage.setItem('select', `${allProduct.allProductsNo}`);
                                             }}
                                         >
                                             자세히 보기
