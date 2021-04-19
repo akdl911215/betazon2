@@ -1,0 +1,13 @@
+.width100pro {
+    width: 100%;
+}
+.display_inline {
+    display: inline;
+}
+.App {
+    text-align: center;
+}
+.img-responsive_img-circle_margin_displayInline {
+    display: inline;
+    border-radius: 99%;
+}
