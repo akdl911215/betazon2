@@ -42,6 +42,9 @@ const HomeMainNavi = () => {
                             <li>
                                 <Link to={'/board/component/seoul-cctv'}>SuoulCCTV</Link>
                             </li>
+                            <li>
+                                <Link to={'/counter/component/counter'}>Counter</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -4,6 +4,8 @@ import { ArticleList, ArticleWrite, ArticleDetail } from 'article/index';
 import { Login, SignUp, UserDetail } from 'user/index';
 import { HomeMainHead, HomeMainFooter, HomeMainNavi, Home } from 'common/index';
 import { SeoulCCTV } from 'board/index';
+// import { Counter } from 'counter/index';
+import Counter from 'counter/component/Counter';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -23,6 +25,8 @@ const App = () => {
             <Route exact path="/common/component/home-main-navi" component={HomeMainNavi}></Route>
             <Route exact path="/common/component/home-main-footer" component={HomeMainFooter}></Route>
             <Route exact path="/common/component/home-main-head" component={HomeMainHead}></Route>
+
+            <Route exact path="/counter/component/counter" component={Counter}></Route>
         </div>
     );
 };
