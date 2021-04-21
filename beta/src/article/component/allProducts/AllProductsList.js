@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 const AllProductsList = () => {
     const [allProducts, setAllProducts] = useState([]);
 
+    useEffect(() => {
+        fetchList();
+    });
+
     const fetchList = () => {
         axios
             .get('http://localhost:8080/allProducts/lsit')
@@ -16,12 +20,6 @@ const AllProductsList = () => {
                 console.log(err);
             });
     };
-
-    useEffect(() => {
-        console.log('fetchList = ' + fetchList);
-        console.log('렌더링 완료');
-        fetchList();
-    });
 
     return (
         <>

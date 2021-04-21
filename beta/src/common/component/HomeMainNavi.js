@@ -45,6 +45,9 @@ const HomeMainNavi = () => {
                             <li>
                                 <Link to={'/counter/component/counter'}>Counter</Link>
                             </li>
+                            <li>
+                                <Link to={'/counter/container/counter-container'}>Redux Counter</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

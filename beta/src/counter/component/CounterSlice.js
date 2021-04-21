@@ -1,15 +1,15 @@
 import React from 'react';
 
-const ReduxCounter = React.memo(({ number, onIncrease, onDecrease }) => {
+const CounterSlice = React.memo(({ number, onIncrease, onDecrease }) => {
     return (
         <>
-            <h2 style={{ color: 'black' }}>리덕스 카운터</h2>
+            <h2 style={{ color: 'gray' }}>슬라이스 카운터</h2>
             <div>
                 <div>
                     <button aria-label="+" onClick={onIncrease}>
                         +
                     </button>
-                    <span style={{ color: 'green', width: 100 }}>{number}</span>
+                    <span style={{ color: 'red', width: 100 }}>{number}</span>
                     <button aria-label="-" onClick={onDecrease}>
                         -
                     </button>
@@ -18,4 +18,4 @@ const ReduxCounter = React.memo(({ number, onIncrease, onDecrease }) => {
         </>
     );
 });
-export default ReduxCounter;
+export default CounterSlice;

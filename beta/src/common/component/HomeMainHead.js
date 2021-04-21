@@ -22,7 +22,6 @@ const HomeMainHead = () => {
                 <link rel="stylesheet" href="/lib/w3schools23.css" />
                 <link href="https://fonts.googleapis.com/css?family=Source Code Pro" rel="stylesheet" />
             </head>
-            ;
         </>
     );
 };
