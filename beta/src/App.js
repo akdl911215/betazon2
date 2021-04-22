@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { ArticleList, ArticleWrite, ArticleDetail } from 'article/index';
+import { ArticleList, ArticleWrite, ArticleDetail, ReviewItemApp } from 'article/index';
 import { Login, SignUp, UserDetail } from 'user/index';
 import { HomeMainHead, HomeMainFooter, HomeMainNavi, Home } from 'common/index';
 import { SeoulCCTV } from 'board/index';
@@ -27,6 +27,8 @@ const App = () => {
 
             <Route exact path="/counter/component/counter" component={Counter}></Route>
             <Route exact path="/counter/container/counter-container" component={CounterContainer}></Route>
+
+            <Route exact path="article/container/reviewItem/review-item-app" component={ReviewItemApp}></Route>
         </div>
     );
 };
