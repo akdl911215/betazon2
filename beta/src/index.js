@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import counterReducer from 'counter/reducer/Counter.reducer';
 import counterSlice from 'counter/reducer/counter.slice';
-import reviewItemReducer from 'article/reducer/reviewItem/reviewItem.reducer';
+import reviewItemReducer from 'reviewItem/reducer/reviewItem.reducer';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 

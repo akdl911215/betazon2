@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { AddReviewItem, ReviewItems } from 'article/index';
-import { addReviewItem } from 'article/reducer/reviewItem/reviewItem.reducer';
+import { addReviewItem } from 'reviewItem/reducer/reviewItem.reducer';
 
 const ReviewItemApp = () => {
     const reviewItems = useSelector((state) => state.reviewReducer);

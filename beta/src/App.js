@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import { ArticleList, ArticleWrite, ArticleDetail, ReviewItemApp } from 'article/index';
-import { Login, SignUp, UserDetail } from 'user/index';
-import { HomeMainHead, HomeMainFooter, HomeMainNavi, Home } from 'common/index';
+// import { ArticleLi } from 'allProducts/index';
+import { ArticleList, ArticleWrite, ArticleDetail } from 'article/index';
 import { SeoulCCTV } from 'board/index';
+import { HomeMainHead, HomeMainFooter, HomeMainNavi, Home } from 'common/index';
 import { Counter, CounterContainer } from 'counter/index';
+// import {  } from 'feedBoard/index';
+// import {  } from 'newProduct/index';
+import { ReviewItemApp } from 'reviewItem/index';
+import { Login, SignUp, UserDetail } from 'user/index';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -28,7 +32,7 @@ const App = () => {
             <Route exact path="/counter/component/counter" component={Counter}></Route>
             <Route exact path="/counter/container/counter-container" component={CounterContainer}></Route>
 
-            <Route exact path="article/container/reviewItem/review-item-app" component={ReviewItemApp}></Route>
+            <Route exact path="reviewItem/container/reviewItem-app" component={ReviewItemApp}></Route>
         </div>
     );
 };

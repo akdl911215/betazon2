@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addReviewItem } from 'article/reducer/reviewItem/reviewItem.reducer';
+import { addReviewItem } from 'reviewItem/reducer/reviewItem.reducer';
 
 const AddReviewItem = () => {
     const [input, setInput] = useState('');

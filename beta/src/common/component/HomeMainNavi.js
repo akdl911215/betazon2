@@ -49,7 +49,7 @@ const HomeMainNavi = () => {
                                 <Link to={'/counter/container/counter-container'}>Redux Counter</Link>
                             </li>
                             <li>
-                                <Link to={'article/container/reviewItem/review-item-app'}>ReviewItemApp</Link>
+                                <Link to={'reviewItem/container/reviewItem-app'}>ReviewItemApp</Link>
                             </li>
                         </ul>
                     </div>
