@@ -7,11 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import counterReducer from 'counter/reducer/Counter.reducer';
 import counterSlice from 'counter/reducer/counter.slice';
-import reviewItemReducer from 'reviewItem/reducer/reviewItem.reducer';
+import reviewItems from 'reviewItem/reducer/reviewItem.reducer';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({ reviewItemReducer, counterSlice, counterReducer });
+const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer });
 // const store = createStore(rootReducer); 바닐라 리덕스
 const store = configureStore({ reducer: rootReducer });
 

@@ -7,7 +7,7 @@ import { HomeMainHead, HomeMainFooter, HomeMainNavi, Home } from 'common/index';
 import { Counter, CounterContainer } from 'counter/index';
 // import {  } from 'feedBoard/index';
 // import {  } from 'newProduct/index';
-import { ReviewItemApp } from 'reviewItem/index';
+import { ReviewItemApp, ReviewItem } from 'reviewItem/index';
 import { Login, SignUp, UserDetail } from 'user/index';
 import { Route } from 'react-router-dom';
 
@@ -19,6 +19,7 @@ const App = () => {
             <Route exact path="/article/component/article-list" component={ArticleList} />
             <Route exact path="/article/component/article-write" component={ArticleWrite}></Route>
             <Route exact path="/article/component/article-detail" component={ArticleDetail}></Route>
+
             <Route exact path="/board/component/seoul-cctv" component={SeoulCCTV}></Route>
 
             <Route exact path="/user/component/login" component={Login}></Route>
@@ -32,7 +33,7 @@ const App = () => {
             <Route exact path="/counter/component/counter" component={Counter}></Route>
             <Route exact path="/counter/container/counter-container" component={CounterContainer}></Route>
 
-            <Route exact path="reviewItem/container/reviewItem-app" component={ReviewItemApp}></Route>
+            <Route exact path="/reviewItem/container/review-item-app" component={ReviewItemApp}></Route>
         </div>
     );
 };

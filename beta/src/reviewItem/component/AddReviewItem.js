@@ -7,7 +7,7 @@ const AddReviewItem = () => {
 
     const dipatch = useDispatch();
     const addTask = (value) => {
-        dispatchEvent(addReviewItem(value));
+        dipatch(addReviewItem(value));
         const taskInput = document.getElementById('new-task');
         taskInput.value = '';
     };
