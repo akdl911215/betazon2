@@ -5,8 +5,8 @@ import uuid from 'uuid/v4';
 const initialState = [
     { id: 1, text: '구매한 화병 너무 예뻐요~~', done: true },
     { id: 2, text: '만족스럽습니다 5점드려요', done: true },
-    { id: 2, text: '우왕 ㅋ 굳 ㅋ', done: false },
-    { id: 2, text: '좋아용', done: false },
+    { id: 3, text: '우왕 ㅋ 굳 ㅋ', done: false },
+    { id: 4, text: '좋아용', done: false },
 ];
 
 // 기능: addReview, review, findReview, editReview, delReview
@@ -18,6 +18,8 @@ const reviewSlice = createSlice({
             state.push({ id: uuid(), text: payload, done: false });
         },
         delReviewItem(state, { payload }) {
+            alert('JSON.stringify(state) = ' + JSON.stringify(state));
+            alert('payload = ' + payload);
             return state.filter((el) => el.id !== payload);
         },
         delAllReviewItem(state, { payload }) {
@@ -26,6 +28,8 @@ const reviewSlice = createSlice({
         },
         toggleReview(state, { payload }) {
             alert(`토글 실행합니다`);
+            const toggleClik = state.find((el) => el.id === payload);
+            toggleClik.done = !toggleClik.done;
         },
     },
 });

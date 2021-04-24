@@ -14,6 +14,7 @@ const ReviewItem = ({ reviewItem, delReviewItem, toggleReview }) => {
         alert(JSON.stringify(reviewItem.id));
         dispatch(toggleReview(reviewItem.id));
     };
+
     return (
         <>
             <div style={{ width: 600 }}>
@@ -21,10 +22,10 @@ const ReviewItem = ({ reviewItem, delReviewItem, toggleReview }) => {
                 <span style={{ width: 400, color: 'blue' }}>
                     {reviewItem.done ? (
                         <del>
-                            <span style={{ width: 100 }}>{reviewItem.text}</span>
+                            <span style={{ width: 400 }}> {reviewItem.text} </span>
                         </del>
                     ) : (
-                        <span style={{ width: 100 }}>{reviewItem.text}</span>
+                        <span style={{ width: 400 }}> {reviewItem.text} </span>
                     )}
                 </span>
                 <button style={{ width: 100, backgroundColor: 'red' }} onClick={deleteClick}>

@@ -9,6 +9,8 @@ const ReviewItems = ({ reviewItems, delReviewItem, delAllReviewItem, toggleRevie
         dispatch(delAllReviewItem());
     };
 
+    alert('ReviewItems 에서 toggleReview 찍어봣다 값은?' + JSON.stringify(toggleReview));
+
     return (
         <>
             <h3>
