@@ -1,4 +1,4 @@
-package com.example.beApi.uss.controller;
+package com.example.beApi.members.controller;
 
 import java.io.IOException;
 
@@ -6,9 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.beApi.fds.domian.Feeds;
-import com.example.beApi.uss.domain.User;
-import com.example.beApi.uss.service.UserServiceImpl;
+import com.example.beApi.members.domain.Member;
+import com.example.beApi.members.service.UserServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping("/users")
 @CrossOrigin(origins="*")
-public class UserController {
+public class MemberController {
 	
 	private final UserServiceImpl sv;
 	
 	@PostMapping("/insert")
 	public ResponseEntity<String> insert(
-			@RequestBody User user) {
+			@RequestBody Member user) {
 		
 		System.out.println("---insert �۵�!---");
 		System.out.println("users = " + user.toString());
@@ -43,7 +42,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(
-			@RequestBody User user) throws IOException {
+			@RequestBody Member user) throws IOException {
 			sv.findAll();
 		System.out.println("sv.findAll() = " + sv.findAll());
 			String login = sv.login(user);
@@ -71,7 +70,7 @@ public class UserController {
 	
 	 @PutMapping("/{username}")
 	    public ResponseEntity<String> update(
-	    		@RequestBody User user,
+	    		@RequestBody Member user,
 	    		@PathVariable String username){
 	    	System.out.println("-----update �۵���-----");
 	    	System.out.println("username = " + username);

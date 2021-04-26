@@ -1,4 +1,4 @@
-package com.example.beApi.uss.domain;
+package com.example.beApi.members.domain;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 

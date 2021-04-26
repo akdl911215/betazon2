@@ -1,5 +1,3 @@
-import { ExpansionPanelDetails } from '@material-ui/core';
-import { UndoOutlined } from '@material-ui/icons';
 import { createSlice } from '@reduxjs/toolkit';
 import uuid from 'uuid/v4';
 
@@ -11,7 +9,7 @@ const initialState = [
 
 const todoSlice = createSlice({
     name: 'todos',
-    initialState: initialState,
+    initialState,
     reducer: {
         addTodo(state, { payload }) {
             state.push({ id: uuid(), text: payload, done: false });
@@ -32,5 +30,5 @@ const todoSlice = createSlice({
     },
 });
 const { actions, reducer } = todoSlice;
-export const { addTodo, deleteTodo, allDelTodo, toggleTodo } = actions;
+export const { addTodo, delTodo, allDelTodo, toggleTodo } = actions;
 export default reducer;

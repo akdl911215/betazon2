@@ -1,4 +1,4 @@
-package com.example.beApi.fds.domian;
+package com.example.beApi.feeds.domian;
 
 import java.util.Date;
 

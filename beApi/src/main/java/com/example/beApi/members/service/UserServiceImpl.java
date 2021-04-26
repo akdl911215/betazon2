@@ -1,17 +1,13 @@
-package com.example.beApi.uss.service;
+package com.example.beApi.members.service;
 
 
 import java.util.*;
 
-import javax.persistence.TypedQuery;
-
 import org.springframework.stereotype.Service;
 
 import com.example.beApi.cmm.service.AbstractService;
-import com.example.beApi.fds.domian.Feeds;
-import com.example.beApi.uss.domain.User;
-import com.example.beApi.uss.domain.UserDto;
-import com.example.beApi.uss.repository.UserRepository;
+import com.example.beApi.members.domain.Member;
+import com.example.beApi.members.repository.UserRepository;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +18,7 @@ import lombok.Setter;
 @Getter
 @RequiredArgsConstructor
 @Service
-public class UserServiceImpl extends AbstractService<User> implements UserService {
+public class UserServiceImpl extends AbstractService<Member> implements UserService {
 
 	private final UserRepository repo;
 
@@ -40,13 +36,13 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public List<User> findAll() {
+	public List<Member> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<User> findOne() {
+	public Optional<Member> findOne() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -58,30 +54,30 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public User getOne(long id) {
+	public Member getOne(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void save(User entity) {
+	public void save(Member entity) {
 		repo.save(entity);
 	}
 
 	@Override
-	public User findById(Long id) {
+	public Member findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String login(User user) {
+	public String login(Member user) {
 		return repo.login(user.getUsername(), user.getPassword());
 	}
 
 	@Override
-	public void updateDB(String id,User user) {
-		User u = repo.findByIdusername(id);
+	public void updateDB(String id, Member user) {
+		Member u = repo.findByIdusername(id);
 		
 		u.setUserNo(user.getUserNo());
 		u.setUsername(user.getUsername());
@@ -94,7 +90,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 	}
 
 	@Override
-	public User findById2(String id) {
+	public Member findById2(String id) {
 		// TODO Auto-generated method stub
 		return repo.findByIdusername(id);
 	}

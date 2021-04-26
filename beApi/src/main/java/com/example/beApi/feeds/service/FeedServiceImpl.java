@@ -1,12 +1,12 @@
-package com.example.beApi.fds.service;
+package com.example.beApi.feeds.service;
 
 import java.util.*;
 
 import org.springframework.stereotype.Service;
 
 import com.example.beApi.cmm.service.AbstractService;
-import com.example.beApi.fds.domian.Feeds;
-import com.example.beApi.fds.repository.FeedRepository;
+import com.example.beApi.feeds.domian.Feeds;
+import com.example.beApi.feeds.repository.FeedRepository;
 
 
 import lombok.RequiredArgsConstructor;

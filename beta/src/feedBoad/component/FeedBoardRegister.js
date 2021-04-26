@@ -3,11 +3,11 @@ import axios from 'axios';
 
 const FeedBoardRegister = () => {
     const [inputs, setInputs] = useState({
-        title: ' ',
-        writer: ' ',
-        content: ' ',
-        addLocation: ' ',
-        hashTag: ' ',
+        title: '',
+        writer: '',
+        content: '',
+        addLocation: '',
+        hashTag: '',
     });
 
     const { title, writer, content, addLocation, hashTag } = inputs;

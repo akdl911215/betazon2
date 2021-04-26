@@ -1,6 +1,4 @@
-package com.example.beApi.fds.service;
-
-import com.example.beApi.fds.domian.Feeds;
+package com.example.beApi.feeds.service;
 
 public interface FeedService {
 		

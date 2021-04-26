@@ -1,4 +1,4 @@
-package com.example.beApi.uss.repository;
+package com.example.beApi.members.repository;
 
 import javax.transaction.Transactional;
 
@@ -7,12 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.beApi.uss.domain.User;
+import com.example.beApi.members.domain.Member;
 
 interface CustomUserRepository {}
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>,
+public interface UserRepository extends JpaRepository<Member, Long>,
 								CustomUserRepository{
 
 	@Transactional
@@ -22,6 +22,6 @@ public interface UserRepository extends JpaRepository<User, Long>,
 	
 	@Transactional
 	@Query(value = "select username from users where username = :username", nativeQuery = true)
-	public User findByIdusername(@Param("username") String username);
+	public Member findByIdusername(@Param("username") String username);
 
 }

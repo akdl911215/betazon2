@@ -1,11 +1,9 @@
-package com.example.beApi.fds.domian;
+package com.example.beApi.feeds.domian;
 
 import java.io.Serializable;
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
