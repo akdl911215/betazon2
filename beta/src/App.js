@@ -9,6 +9,7 @@ import { Counter, CounterContainer } from 'counter/index';
 // import {  } from 'newProduct/index';
 import { ReviewItemApp, ReviewItem } from 'reviewItem/index';
 import { Login, SignUp, UserDetail } from 'user/index';
+import { TodoApp } from 'todo/index';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -34,6 +35,8 @@ const App = () => {
             <Route exact path="/counter/container/counter-container" component={CounterContainer}></Route>
 
             <Route exact path="/reviewItem/container/review-item-app" component={ReviewItemApp}></Route>
+
+            <Route exact path="/todo/continer/todo-app" component={TodoApp}></Route>
         </div>
     );
 };

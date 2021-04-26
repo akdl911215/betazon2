@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://bit911215.cebga7nnwvvl.ap-northeast-2.rds.amazonaws.com:3306/bit911215
+    username: root
+    password: 456123
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+  jwt:
+    secret: jwtSecret

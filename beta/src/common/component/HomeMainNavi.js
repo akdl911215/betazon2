@@ -51,6 +51,9 @@ const HomeMainNavi = () => {
                             <li>
                                 <Link to={'/reviewItem/container/review-item-app'}>ReviewItemApp</Link>
                             </li>
+                            <li>
+                                <Link to={'/todo/continer/todo-app'}>TodoApp</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
