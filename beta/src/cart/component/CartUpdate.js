@@ -38,7 +38,7 @@ const CartUpdate = () => {
             console.log('update')
             axios
                 .put(`http://localhost:8080/cart/${localStorage.getItem('select')}`, {
-                    [itemInfomation, 
+                    itemInfomation, 
                         option, 
                         price, 
                         deliveryCharge, 
@@ -84,12 +84,12 @@ const CartUpdate = () => {
                 <label htmlFor="deliveryCharge">
                     <b>배송비</b>
                 </label>
-                <input type="text" placeholder="Enter AddLocation" name="addLocation" id="addLocation" onChange={handleChange} required />
+                <input type="text" placeholder="Enter DeliveryCharge" name="deliveryCharge" id="deliveryCharge" onChange={handleChange} required />
 
-                <label htmlFor="hashTage">
-                    <b>해쉬 태그</b>
+                <label htmlFor="totalPrice">
+                    <b>총 비용</b>
                 </label>
-                <input type="text" placeholder="Enter HashTage" name="hashTage" id="hashTage" required onChange={handleChange} />
+                <input type="text" placeholder="Enter TotalPrice" name="totalPrice" id="totalPrice" required onChange={handleChange} />
 
                 <button type="submit">수정하기</button>
             </form>

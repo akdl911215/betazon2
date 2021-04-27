@@ -1,10 +1,7 @@
 package com.example.beApi.stream;
 
 import java.sql.Array;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -70,7 +67,7 @@ public class StreamMain {
     public static void main(String... args) {
         Scanner scanner = new Scanner(System.in);
         while(true){
-            System.out.println("메뉴: 0. EXIT 1.학년오름차순 2. 성적오름차순 3.이름오름차순 4.ID오름차순 5.성적내림차순");
+            System.out.println("메뉴: 0. EXIT 1.학년오름차순 2. 성적오름차순 3.이름오름차순 4.ID오름차순 5.성적내림차순 6.대문자(toUpperCase)출력 7.소문자(toLowerCase)출력");
             System.out.print("번호를 입력하시오: ");
             switch (scanner.nextInt()){
                 case 0: return;
@@ -79,6 +76,8 @@ public class StreamMain {
                 case 3: ascName().forEach(System.out::println); break;
                 case 4: ascUsername().forEach(System.out::println); break;
                 case 5: descScore().forEach(System.out::println); break;
+                case 6: toUpperCase().forEach(System.out::println); break;
+                case 7: toLowerCase().forEach(System.out::println); break;
             }
         }
 
@@ -94,6 +93,32 @@ public class StreamMain {
                 new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername()),
                 new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername()),
                 new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername())
+        );
+    }
+
+    public static Stream<Student> makeStreamToUpperCase(){
+        DummyGenerator dum = new DummyGenerator();
+
+        return Stream.of(
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toUpperCase())
+        );
+    }
+
+    public static Stream<Student> makeStreamToLowerCase(){
+        DummyGenerator dum = new DummyGenerator();
+
+        return Stream.of(
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase()),
+                new Student(dum.makeName(), RefUtil.random.apply(1,3),RefUtil.random.apply(0,100), dum.makeUsername().toLowerCase())
         );
     }
 
@@ -122,7 +147,17 @@ public class StreamMain {
     }
 
     public static Stream<Student> descScore(){
-        return makeSteram().sorted(Comparator.comparing(Student::getScore)
-            .thenComparing(Collec.reverseOrder()));
+        return makeSteram().sorted(Comparator.comparing(Student::getScore).reversed()
+            .thenComparing(Comparator.naturalOrder()));
+    }
+
+    public static Stream<Student> toUpperCase(){
+        return makeStreamToUpperCase().sorted(Comparator.comparing(Student::getUsername)
+            .thenComparing(Comparator.naturalOrder()));
+    }
+
+    public static Stream<Student> toLowerCase(){
+        return makeStreamToLowerCase().sorted(Comparator.comparing(Student::getUsername)
+                .thenComparing(Comparator.naturalOrder()));
     }
 }
