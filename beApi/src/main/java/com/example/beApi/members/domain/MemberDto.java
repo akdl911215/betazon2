@@ -12,23 +12,23 @@ import lombok.Setter;
 public class MemberDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	private long memberNo;
-	private String memberName;
+	private long userNo;
+	private String username;
 	private String password;
-	private String memberEmail;
-	private String memberAddress;
-	private String memberPhoneNumber;
+	private String userEamil;
+	private String userAddress;
+	private String userPhoneNumber;
 
 	@Builder
-	public MemberDto(long memberNo, String memberName, String password, String memberEmail, String memberAddress,
-					 String memberPhoneNumber) {
+	public MemberDto(long userNo, String username, String password, String userEamil, String userAddress,
+					 String userPhoneNumber) {
 		super();
-		this.memberNo = memberNo;
-		this.memberName = memberName;
+		this.userNo = userNo;
+		this.username = username;
 		this.password = password;
-		this.memberEmail = memberEmail;
-		this.memberAddress = memberAddress;
-		this.memberPhoneNumber = memberPhoneNumber;
+		this.userEamil = userEamil;
+		this.userAddress = userAddress;
+		this.userPhoneNumber = userPhoneNumber;
 	}
 
 	

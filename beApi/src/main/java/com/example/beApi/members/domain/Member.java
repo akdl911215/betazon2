@@ -19,34 +19,34 @@ public class Member {
 	@Id
 	@GeneratedValue
 	
-	@Column(name = "member_no")
-	private long memberNo;
+	@Column(name = "user_no")
+	private long userNo;
 	
-	@Column(name = "member_name")
-	private String memberName;
+	@Column(name = "username")
+	private String username;
 	
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "member_email")
-	private String memberEmail;
+	@Column(name = "user_email")
+	private String userEmail;
 	
-	@Column(name = "member_address")
-	private String memberAddress;
+	@Column(name = "user_address")
+	private String userAddress;
 	
-	@Column(name = "member_phone_number")
-	private String memberPhoneNumber;
+	@Column(name = "user_phone_number")
+	private String userPhoneNumber;
 
 	@Builder
-	public Member(long memberNo, String memberName, String password, String memberEmail, String memberAddress,
-				  String memberPhoneNumber) {
+	public Member(long userNo, String username, String password, String userEmail, String userAddress,
+				  String userPhoneNumber) {
 		super();
-		this.memberNo = memberNo;
-		this.memberName = memberName;
+		this.userNo = userNo;
+		this.username = username;
 		this.password = password;
-		this.memberEmail = memberEmail;
-		this.memberAddress = memberAddress;
-		this.memberPhoneNumber = memberPhoneNumber;
+		this.userEmail = userEmail;
+		this.userAddress = userAddress;
+		this.userPhoneNumber = userPhoneNumber;
 	}
 	
 }
