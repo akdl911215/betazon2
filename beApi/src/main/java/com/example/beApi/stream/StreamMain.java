@@ -72,18 +72,19 @@ public class StreamMain {
             switch (scanner.nextInt()){
                 case 0: return;
                 case 1: ascGrade().forEach(System.out::println); break;
-                case 2: ascScore().forEach(System.out::println); break;
-                case 3: ascName().forEach(System.out::println); break;
-                case 4: ascUsername().forEach(System.out::println); break;
-                case 5: descScore().forEach(System.out::println); break;
-                case 6: toUpperCase().forEach(System.out::println); break;
-                case 7: toLowerCase().forEach(System.out::println); break;
+                case 2: descGrade().forEach(System.out::println); break;
+                case 3: ascScore().forEach(System.out::println); break;
+                case 4: descScore().forEach(System.out::println); break;
+                case 5: ascName().forEach(System.out::println); break;
+                case 6: ascUsername().forEach(System.out::println); break;
+                case 7: toUpperCase().forEach(System.out::println); break;
+                case 8: toLowerCase().forEach(System.out::println); break;
             }
         }
 
     }
 
-    public static Stream<Student> makeSteram(){
+    public static Stream<Student> makeStream(){
         DummyGenerator dum = new DummyGenerator();
 
         return Stream.of(
@@ -123,41 +124,62 @@ public class StreamMain {
     }
 
     public static Stream<Student> ascGrade(){
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getGrade) // Comparator comparing(String s)
+                    .thenComparing(Comparator.naturalOrder())); // Comparable compareTo(Object o)
+    }
 
-        return makeSteram().sorted(Comparator.comparing(Student::getGrade)
-                .thenComparing(Comparator.naturalOrder()));
+    public static Stream<Student> descGrade(){
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getGrade).reversed() // Comparator comparing(String s) 의 reverse
+                        .thenComparing(Comparator.naturalOrder())); // Comparable compareTo(Object o)
     }
 
     public static Stream<Student> ascName() {
-
-
-        return makeSteram().sorted(Comparator.comparing(Student::getName)
-            .thenComparing(Comparator.naturalOrder()));
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getName)
+                    .thenComparing(Comparator.naturalOrder()));
     }
 
+//    public static Stream<Student> ascUsername() {
+//        return makeStream()
+//                .sorted(Comparator.comparing(Student::getUsername)
+//                    .thenComparing(Comparator.naturalOrder()));
+//    }
+
     public static Stream<Student> ascUsername() {
-        return makeSteram().sorted(Comparator.comparing(Student::getUsername)
-                .thenComparing(Comparator.naturalOrder()));
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getUsername));
     }
 
     public static Stream<Student> ascScore() {
-        return makeSteram().sorted(Comparator.comparing(Student::getScore)
-                .thenComparing(Comparator.naturalOrder()));
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getScore)
+                    .thenComparing(Comparator.naturalOrder()));
 
     }
 
     public static Stream<Student> descScore(){
-        return makeSteram().sorted(Comparator.comparing(Student::getScore).reversed()
-            .thenComparing(Comparator.naturalOrder()));
+        return makeStream()
+                .sorted(Comparator.naturalOrder()); // // Comparator comparing(String s) 의 reverse
+
     }
 
+//    public static Stream<Student> descScore(){
+//        return makeSteram()
+//                .sorted(Comparator.comparing(Student::getScore)
+//                        .thenComparing(Comparator.reverseOrder()));
+//    }
+
     public static Stream<Student> toUpperCase(){
-        return makeStreamToUpperCase().sorted(Comparator.comparing(Student::getUsername)
-            .thenComparing(Comparator.naturalOrder()));
+        return makeStreamToUpperCase()
+                .sorted(Comparator.comparing(Student::getUsername)
+                    .thenComparing(Comparator.naturalOrder()));
     }
 
     public static Stream<Student> toLowerCase(){
-        return makeStreamToLowerCase().sorted(Comparator.comparing(Student::getUsername)
-                .thenComparing(Comparator.naturalOrder()));
+        return makeStreamToLowerCase()
+                .sorted(Comparator.comparing(Student::getUsername)
+                    .thenComparing(Comparator.naturalOrder()));
     }
 }

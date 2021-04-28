@@ -52,12 +52,20 @@ public class DummyGenerator {
 
     public String makeUsername() {
         List<String> id = Arrays.asList("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split(""));
-//        List<String> id = Arrays.asList("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".substring(1,4));
         shuffle(id);
         id.subList(0, 4);
-        return id.get(0)+id.get(1)+id.get(2)+id.get(3);
-//        return id.get(0);
+        StringBuffer sb = new StringBuffer();
+        for(int i=0; i < 5; i++){
+            sb.append(id.get(i));
+        }
+        return sb.toString();
     }
+    /*
+    * sb.insert(index, "<입력값>")
+    * sb.replace(index, sb.length(), "<대체값>")
+    * sb.delete(start-index, end-index)
+    * sb.eleteCharAt(index)
+    * */
 
     public String makeEmail() {
         List<String> email = Arrays.asList("@test.com", "@gmail.com", "@naver.com");
