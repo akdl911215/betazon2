@@ -28,7 +28,6 @@ const BatazonReivewRead = () => {
         fetchOne();
     }, []);
 
-    useEffect(() => console.log(err));
     return (
         <>
             <form>

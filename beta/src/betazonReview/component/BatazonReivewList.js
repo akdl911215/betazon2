@@ -11,14 +11,14 @@ const BatazonReivewList = () => {
                 setReviewList(res.data);
             })
             .catch((err) => {
-                console.log(errr);
+                console.log(rrr);
             });
     };
 
     useEffect(() => {
         console.log('렌더링중..');
         fetchList();
-    });
+    }, []);
     return (
         <>
             <table>

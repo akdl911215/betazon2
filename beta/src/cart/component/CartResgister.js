@@ -10,7 +10,7 @@ const CartResgister = () => {
         totalPrice: '',
     });
 
-    const { itemInfomation, option, price, deliveryCharge, totalPrice } = inputs;
+    const [itemInfomation, option, price, deliveryCharge, totalPrice] = inputs;
 
     const handleChange = useCallback(
         (e) => {

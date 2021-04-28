@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const BetazonNoticeList = () => {
@@ -13,6 +13,11 @@ const BetazonNoticeList = () => {
             })
             .catch((err) => console.log(err));
     };
+
+    useEffect(() => {
+        console.log('렌더링중');
+        fetchList();
+    });
 
     return <></>;
 };
