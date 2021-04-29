@@ -3,9 +3,7 @@ package com.example.beApi.review.service;
 import com.example.beApi.cmm.service.AbstractService;
 import com.example.beApi.review.domain.Review;
 import com.example.beApi.review.repository.ReviewRepository;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +18,10 @@ public class ReviewServiceImpl extends AbstractService<Review> implements Review
     @Override
     public Long save(Review review) {
         return (repository.save(review) != null) ? 1L : 0L;
+    }
+
+    public Long saveAll(){
+        return 0L;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.beApi.cmm.Controller;
+package com.example.beApi.cmm.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

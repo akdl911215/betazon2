@@ -1,11 +1,10 @@
 package com.example.beApi.review.controller;
 
-import com.example.beApi.cmm.Controller.AbstractController;
+import com.example.beApi.cmm.controller.AbstractController;
 import com.example.beApi.review.domain.Review;
 import com.example.beApi.review.service.ReviewServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

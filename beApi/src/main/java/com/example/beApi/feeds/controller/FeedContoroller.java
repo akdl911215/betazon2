@@ -61,7 +61,7 @@ public class FeedContoroller {
 	    	System.out.println("getDeleteById()");
 	    	System.out.println("feedNo: " + feedNo);
 
-			sv.deleteById(feedNo);
+//			sv.deleteById(feedNo);
 	    	
 	    	return new ResponseEntity<>("delete sucess", HttpStatus.NO_CONTENT);
 	    }

@@ -1,4 +1,4 @@
-package com.example.beApi.news.domain;
+package com.example.beApi.bugs.domain;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
@@ -7,10 +7,9 @@ import javax.persistence.Column;
 
 @Component
 @Data
-public class NewsDto {
-
-    private Long newsId;
-    private String newsNo;
+public class BugsDto {
+    private Long bugsId;
+    private String bugsNo;
     private String category;
     private String title;
     private String address;

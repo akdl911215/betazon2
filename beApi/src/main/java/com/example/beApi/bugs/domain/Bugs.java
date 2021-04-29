@@ -1,20 +1,23 @@
-package com.example.beApi.news.domain;
+package com.example.beApi.bugs.domain;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
-@NoArgsConstructor
 @Entity
-public class News {
+@Data
+@RequiredArgsConstructor
+public class Bugs {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long newsId;
+    private Long bugsId;
 
     @Column(length = 20, nullable = false)
-    private String newsNo;
+    private String bugsNo;
 
     @Column(length = 20, nullable = false)
     private String category;
@@ -26,9 +29,9 @@ public class News {
     private String address;
 
     @Builder
-    public News(String newsNo, String category,
+    public Bugs(String bugsNo, String category,
                 String title, String address) {
-        this.newsNo = newsNo;
+        this.bugsNo = bugsNo;
         this.address = address;
         this.category = category;
         this.title = title;
