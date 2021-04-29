@@ -12,6 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -37,8 +38,8 @@ public class BugsServiceImpl extends AbstractService<Bugs> implements BugsServic
     }
 
     @Override
-    public List<News> newsFindAll() {
-        return null;
+    public List<Bugs> bugsFindAll() {
+        return repository.bugsFindALl();
     }
 
     @Override
@@ -47,8 +48,8 @@ public class BugsServiceImpl extends AbstractService<Bugs> implements BugsServic
     }
 
     @Override
-    public Optional<Bugs> findbyBugsNo(String bugsNo) {
-        return Optional.empty();
+    public Optional<Bugs> findByBugsNo(String bugsNo) {
+        return Optional.ofNullable(repository.findByBugsNo(bugsNo));
     }
 
     @Override
@@ -94,7 +95,7 @@ public class BugsServiceImpl extends AbstractService<Bugs> implements BugsServic
     }
 
     @Override
-    public Long saveAll(String category) {
+    public Long saveAll(String category) throws IOException {
         Document document = connectUrl("https://music.bugs.co.kr/" + category);
         repository.deleteAll();
 

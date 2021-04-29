@@ -20,8 +20,9 @@ public class BugsController {
     @GetMapping("/{category}/scrap")
     public ResponseEntity<Long> crawlingBugs
             (@PathVariable String category) throws IOException {
+        service.saveAll(category);
+        System.out.println("+++++++++++ 카테고리 = " + category);
 
-
-        return null;
+        return ResponseEntity.ok(service.saveAll(category));
     }
 }
