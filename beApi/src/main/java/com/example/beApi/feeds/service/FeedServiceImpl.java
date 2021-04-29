@@ -20,37 +20,37 @@ public class FeedServiceImpl extends AbstractService<Feeds> implements FeedServi
 	private final FeedRepository repo;
 
 	@Override
-	public ResponseEntity<Long> save(Feeds feeds) {
+	public Long save(Feeds feeds) {
 		return null;
 	}
 
 	@Override
-	public ResponseEntity<Optional<Feeds>> findById(Long id) {
+	public Optional<Feeds> findById(Long id) {
+		return Optional.empty();
+	}
+
+	@Override
+	public List<Feeds> findAll() {
 		return null;
 	}
 
 	@Override
-	public ResponseEntity<List<Feeds>> findAll() {
+	public Long count() {
 		return null;
 	}
 
 	@Override
-	public ResponseEntity<Long> count() {
+	public Optional<Feeds> getOne(Long id) {
+		return Optional.empty();
+	}
+
+	@Override
+	public Long delete(Feeds feeds) {
 		return null;
 	}
 
 	@Override
-	public ResponseEntity<Optional<Feeds>> getOne(Long id) {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Long> delete(Feeds feeds) {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Boolean> existsById(long id) {
+	public Boolean existsById(long id) {
 		return null;
 	}
 

@@ -9,13 +9,13 @@ import java.util.Optional;
 
 public abstract class AbstractService<T> {
 
-	public abstract ResponseEntity<Long> save(T t);
-	public abstract ResponseEntity<Optional<T>> findById(Long id);
-	public abstract ResponseEntity<List<T>> findAll();
-	public abstract ResponseEntity<Long> count();
-	public abstract ResponseEntity<Optional<T>> getOne(Long id);
-	public abstract ResponseEntity<Long> delete(T t);
-	public abstract ResponseEntity<Boolean> existsById(long id);
+	public abstract Long save(T t);
+	public abstract Optional<T> findById(Long id);
+	public abstract List<T> findAll();
+	public abstract Long count();
+	public abstract Optional<T> getOne(Long id);
+	public abstract Long delete(T t);
+	public abstract Boolean existsById(long id);
 
 //	public abstract long count();
 //	public abstract boolean existsById(long id);

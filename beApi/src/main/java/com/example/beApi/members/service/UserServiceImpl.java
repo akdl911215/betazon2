@@ -23,40 +23,7 @@ public class UserServiceImpl extends AbstractService<Member> implements UserServ
 
 	private final UserRepository repo;
 
-	@Override
-	public ResponseEntity<Long> save(Member member) {
-		return null;
-	}
 
-	@Override
-	public ResponseEntity<Optional<Member>> findById(Long id) {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<List<Member>> findAll() {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Long> count() {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Optional<Member>> getOne(Long id) {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Long> delete(Member member) {
-		return null;
-	}
-
-	@Override
-	public ResponseEntity<Boolean> existsById(long id) {
-		return null;
-	}
 
 	@Override
 	public String login(Member user) {
@@ -66,6 +33,41 @@ public class UserServiceImpl extends AbstractService<Member> implements UserServ
 	@Override
 	public void updateDB(String id, Member user) {
 
+	}
+
+	@Override
+	public Long save(Member member) {
+		return null;
+	}
+
+	@Override
+	public Optional<Member> findById(Long id) {
+		return Optional.empty();
+	}
+
+	@Override
+	public List<Member> findAll() {
+		return null;
+	}
+
+	@Override
+	public Long count() {
+		return null;
+	}
+
+	@Override
+	public Optional<Member> getOne(Long id) {
+		return Optional.empty();
+	}
+
+	@Override
+	public Long delete(Member member) {
+		return null;
+	}
+
+	@Override
+	public Boolean existsById(long id) {
+		return null;
 	}
 
 	//	@Override
