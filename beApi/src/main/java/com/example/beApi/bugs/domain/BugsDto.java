@@ -3,8 +3,6 @@ package com.example.beApi.bugs.domain;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-
 @Component
 @Data
 public class BugsDto {

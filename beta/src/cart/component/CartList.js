@@ -19,7 +19,7 @@ const CartList = () => {
     useEffect(() => {
         console.log('렌더링중...');
         fetchList();
-    });
+    },[]);
     return (
         <>
             <table>

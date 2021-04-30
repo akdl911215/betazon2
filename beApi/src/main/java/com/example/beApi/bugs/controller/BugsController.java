@@ -17,12 +17,12 @@ public class BugsController {
 
     private final BugsService service;
 
-    @GetMapping("/{category}/scrap")
-    public ResponseEntity<Long> crawlingBugs
-            (@PathVariable String category) throws IOException {
-        service.saveAll(category);
-        System.out.println("+++++++++++ 카테고리 = " + category);
-
-        return ResponseEntity.ok(service.saveAll(category));
-    }
+//    @GetMapping("/{category}/scrap")
+//    public ResponseEntity<Long> crawlingBugs
+//            (@PathVariable String category) throws IOException {
+//        service.saveAll(category);
+//        System.out.println("+++++++++++ 카테고리 = " + category);
+//
+//        return ResponseEntity.ok(service.saveAll(category));
+//    }
 }

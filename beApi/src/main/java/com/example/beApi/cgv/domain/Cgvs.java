@@ -1,12 +1,14 @@
 package com.example.beApi.cgv.domain;
 
 import lombok.Builder;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @RequiredArgsConstructor
 @Entity
+@Data
 public class Cgvs {
 
     @Id

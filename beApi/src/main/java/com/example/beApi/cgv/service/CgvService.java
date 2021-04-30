@@ -10,11 +10,11 @@ import java.util.Optional;
 
 public interface CgvService {
 
-    public Long saveAll(String category) throws IOException;
-    public Document connectUrl(String url) throws IOException;
-    public List<Cgvs> CgvsFindAll();
-    public void crawlingHome();
-
-    public Optional<Cgvs> findByCgvsNo(String cgvsNo);
-    public void optionalinit(String cgvs);
+//    public Long saveAll(String category) throws IOException;
+//    public Document connectUrl(String url) throws IOException;
+//    public List<Cgvs> CgvsFindAll();
+//    public void crawlingHome();
+//
+//    public Optional<Cgvs> findByCgvsNo(String cgvsNo);
+//    public void optionalinit(String cgvs);
 }

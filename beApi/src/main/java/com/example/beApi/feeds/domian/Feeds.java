@@ -1,9 +1,12 @@
 package com.example.beApi.feeds.domian;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
+import com.example.beApi.file.domain.File;
 import lombok.*;
 
 @NoArgsConstructor
@@ -51,4 +54,7 @@ public class Feeds {
 		this.hashTag = hashTag;
 		this.regDate = new Date();
 	}
+
+	@OneToMany(mappedBy = "feeds")
+	List<File> feils = new ArrayList<>();
 }

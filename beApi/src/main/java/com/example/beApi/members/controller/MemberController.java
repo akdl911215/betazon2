@@ -1,7 +1,11 @@
 package com.example.beApi.members.controller;
 
 import java.io.IOException;
+import java.util.List;
 
+import com.example.beApi.cmm.controller.Crawler;
+import com.example.beApi.members.domain.MemberDto;
+import com.example.beApi.news.domain.News;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,66 +24,31 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 	
 	private final UserServiceImpl sv;
-	
-	@PostMapping("/insert")
-	public ResponseEntity<String> insert(
-			@RequestBody Member user) {
-		
-		System.out.println("---insert �۵�!---");
-		System.out.println("users = " + user.toString());
-		System.out.println("username = " + user.getUsername());
-		System.out.println("password = " + user.getPassword());
-		System.out.println("userEmail = " + user.getUserEmail());
-		System.out.println("userAddress = " + user.getUserAddress());
-		System.out.println("userPhoneNumber = " + user.getUserPhoneNumber());
-		System.out.println("userNo = " + user.getUserNo());
-		
-		
-		sv.save(user);
-		
-		return new ResponseEntity<>("insert success", HttpStatus.OK);
+
+	@PostMapping("")
+	public ResponseEntity<Long> Join
+			(@RequestBody MemberDto member) throws IOException {
+
+		return ResponseEntity.ok(null);
 	}
-	
-	@PostMapping("/login")
-	public ResponseEntity<?> login(
-			@RequestBody Member user) throws IOException {
-			sv.findAll();
-		System.out.println("sv.findAll() = " + sv.findAll());
-			String login = sv.login(user);
-		System.out.println("---login �۵�!---");
-		System.out.println("user = " + user);
-		System.out.println("userToString = " + user.toString());
-		System.out.println("user.getUserNo() = " + user.getUserNo());
-		
-		if(login != null) {
-			System.out.println("�α����� �����ϼ̽��ϴ�");
-			System.out.println("userNo = " + user.getUserNo());
-			System.out.println("username = " + user.getUsername());
-			System.out.println("password = " + user.getPassword());
-			
-			return new ResponseEntity<>(login, HttpStatus.OK);
-		} else {
-			System.out.println("�α����� �����ϼ̽��ϴ�");
-			System.out.println("userNo = " + user.getUserNo());
-			System.out.println("username = " + user.getUsername());
-			System.out.println("password = " + user.getPassword());
-			
-			return new ResponseEntity<>(login, HttpStatus.UNAUTHORIZED);
-		}
+
+	@GetMapping("")
+	public ResponseEntity<List<News>> fetch
+			(@RequestBody News news){
+		return ResponseEntity.ok(null);
 	}
-	
-	 @PutMapping("/{username}")
-	    public ResponseEntity<String> update(
-	    		@RequestBody Member user,
-	    		@PathVariable String username){
-	    	System.out.println("-----update �۵���-----");
-	    	System.out.println("username = " + username);
-	    	System.out.println("user.getUserNo = " + user.getUserNo());
-	    	
-	    	sv.updateDB(username, user);
-	    	
-			return new ResponseEntity<>("update success", HttpStatus.OK);
-	    }
-    
+
+
+	@PutMapping("")
+	public ResponseEntity<Long> update
+			(@RequestBody News news){
+		return ResponseEntity.ok(null);
+	}
+
+	@DeleteMapping("")
+	public ResponseEntity<List<News>> delete
+			(@RequestBody News news){
+		return ResponseEntity.ok(null);
+	}
 
 }

@@ -1,5 +1,6 @@
 package com.example.beApi.file.domain;
 
+import com.example.beApi.feeds.domian.Feeds;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -22,4 +23,9 @@ public class File {
 
     @Column(name = "content")
     private String content;
+
+    @ManyToOne
+//    @JoinColumn("feeds_id")
+    Feeds feeds;
+
 }
