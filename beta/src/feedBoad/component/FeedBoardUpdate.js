@@ -3,9 +3,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const FeedBoardUpdate = () => {
-    const [detail, setDetail] = useState({});
+    const [details, setDetails] = useState({});
 
-    const { title, writer, content, addLocation, hashTag } = detail;
+    const { title, writer, content, addLocation, hashTag } = details;
     const fetchOne = () => {
         alert('정보를 가져옵니다');
         alert(`${localStorage.getItem('select')}`);
@@ -14,9 +14,9 @@ const FeedBoardUpdate = () => {
             .get(`http://localhost:8080/feeds/${localStorage.getItem('select')}`)
             .then((res) => {
                 console.log(res);
-                setDetail({
+                setDetails({
                     title: res.data.title,
-                    write: res.data.writer,
+                    writer: res.data.writer,
                     content: res.data.content,
                     addLocation: res.data.addLocation,
                     hashTag: res.data.hashTag,
@@ -46,7 +46,7 @@ const FeedBoardUpdate = () => {
                 })
                 .then((res) => {
                     console.log(res);
-                    window.location = '/FeedBoardList';
+                    window.location = '/';
                 })
                 .catch((err) => console.log(err));
         },
@@ -56,12 +56,12 @@ const FeedBoardUpdate = () => {
     const handleChange = useCallback(
         (e) => {
             const { value, name } = e.target;
-            setDetail({
-                ...detail,
+            setDetails({
+                ...details,
                 [name]: value,
             });
         },
-        [detail]
+        [details]
     );
     return (
         <>

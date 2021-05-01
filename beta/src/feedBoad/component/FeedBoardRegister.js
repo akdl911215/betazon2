@@ -38,7 +38,7 @@ const FeedBoardRegister = () => {
                 })
                 .then((res) => {
                     console.log(res);
-                    window.location = '/FeedBoardList';
+                    window.location = '/';
                 })
                 .catch((err) => console.log(err));
         },
