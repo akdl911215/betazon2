@@ -31,15 +31,16 @@ public class NewsController {
 //    }
 
     @PostMapping("/scrap")
-    public ResponseEntity<List<News>> crawling(@RequestBody Crawler crawler)throws IOException {
+    public ResponseEntity<List<News>> crawling
+            (@RequestBody Crawler crawler)throws IOException {
         System.out.print("****************** 카테고리 : "+crawler.toString());
         return ResponseEntity.ok(newsService.saveAll(crawler));
     }
 
     @PostMapping("")
     public ResponseEntity<List<News>> post
-    (final Pageable pageable){
-        return ResponseEntity.ok(null);
+        (final Pageable pageable){
+            return ResponseEntity.ok(null);
     }
     @GetMapping("")
     public ResponseEntity<Page<News>> findAll

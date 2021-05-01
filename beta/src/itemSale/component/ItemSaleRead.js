@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 const ItemSaleRead = () => {
+    const [details, setDetails] = useState({});
 
-    const [details, setDetails ] = useState({});
-    
     const deleteOne = () => {
         console.log('삭제합니다.');
 
@@ -12,31 +11,29 @@ const ItemSaleRead = () => {
             .delete(`http:localhost:8080/itemSale/${localStorage.getItem('select')}`)
             .then((res) => {
                 alert(res);
-                console.log(res)
+                console.log(res);
             })
-            .catch((err) => console.log(err))
-    }
+            .catch((err) => console.log(err));
+    };
 
     const fetchOne = () => {
-        console.log('정보를 불러옵니다')
+        console.log('정보를 불러옵니다');
 
         axios
             .get(`http:localhost:8080/itemSale/${localStorage.getItem('select')}}`)
             .then((res) => {
-                alert((res) => {
-                    alert(res)
-                    console.log(res)
-                })
-                .catch((err) => console.log(err))
-            }
-    }
+                console.log(res);
+            })
+            .catch((err) => console.log(err));
+    };
 
     useEffect(() => {
-        fetch();
-    }, [])
+        fetchOne();
+    }, []);
 
-    return (<>
-     <form>
+    return (
+        <>
+            <form>
                 <div>
                     <table>
                         <thead>
@@ -71,6 +68,7 @@ const ItemSaleRead = () => {
                     </Link>
                 </div>
             </form>
-    </>);
+        </>
+    );
 };
 export default ItemSaleRead;
