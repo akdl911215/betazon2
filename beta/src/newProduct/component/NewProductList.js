@@ -1,13 +1,9 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
+import React, { useEffect, useState } from 'react';
+import Link from 'react-router-dom';
 
 const NewProductList = () => {
     const [newProductList, setNewProductList] = useState([]);
-
-    useEffect(() => {
-        fetchList();
-    });
 
     const fetchList = () => {
         axios
@@ -20,6 +16,10 @@ const NewProductList = () => {
                 console.log(err);
             });
     };
+
+    useEffect(() => {
+        fetchList();
+    });
 
     return (
         <>

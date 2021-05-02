@@ -1,8 +1,11 @@
+import { Details } from '@material-ui/icons';
 import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 
 const ItemSaleUpdate = () => {
-    const [detales, setDetails] = useState({});
+    const [details, setDetails] = useState({});
+
+    const { title, price, reducedPrice, content } = details;
 
     const fetchOne = () => {
         alert('정보를가져옵니다');
@@ -18,14 +21,14 @@ const ItemSaleUpdate = () => {
                     content: res.data.content,
                 });
             })
-            .catch((err) => console.log);
+            .catch((err) => console.log(err));
     };
 
     useEffect(() => {
         fetchOne();
     }, []);
 
-    const handleChange = useCallback(
+    const handleSubmit = useCallback(
         (e) => {
             alert('정보를 보냅니다');
             alert(`${localStorage.getItem('select')}`);
@@ -33,20 +36,34 @@ const ItemSaleUpdate = () => {
             e.preventDefault();
             console.log('update');
             axios
-                .put(`http://localhost:8080/itemSale/${localStorage.getItem('select')}`,{
+                .put(`http://localhost:8080/itemSale/${localStorage.getItem('select')}`, {
                     title,
                     price,
                     reducedPrice,
                     content,
                 })
                 .then((res) => {
-                    console.log(res)
-                    window.location = '/'
+                    console.log(res);
+                    window.location = '/';
                 })
-                .catch((err) => console.log(err))
-    )
-    return (<>
-        <h1>수정 페이지</h1>
+                .catch((err) => console.log(err));
+        },
+        [title, price, reducedPrice, content]
+    );
+
+    const handleChange = useCallback(
+        (e) => {
+            const { value, name } = e.target;
+            setDetails({
+                ...details,
+                [name]: value,
+            });
+        },
+        [details]
+    );
+    return (
+        <h1>
+            <h1>수정 페이지</h1>
             <form onSubmit={handleSubmit} method="post">
                 <label htmlFor="title">
                     <b>제목</b>
@@ -71,6 +88,7 @@ const ItemSaleUpdate = () => {
                 <button type="submit">수정하기</button>
             </form>
             <Link to="/">목록으로</Link>
-    </>);
+        </h1>
+    );
 };
 export default ItemSaleUpdate;

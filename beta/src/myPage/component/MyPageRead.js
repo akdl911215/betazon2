@@ -1,6 +1,6 @@
-import { RssFeed } from '@material-ui/icons';
 import axios from 'axios';
-import React, { useEffect, useState, Link } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyPageRead = () => {
     const [detailes, setDetails] = useState({});
