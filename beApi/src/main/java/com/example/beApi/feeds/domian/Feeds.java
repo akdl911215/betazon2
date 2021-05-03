@@ -55,6 +55,4 @@ public class Feeds {
 		this.regDate = new Date();
 	}
 
-	@OneToMany(mappedBy = "feeds")
-	List<File> feils = new ArrayList<>();
 }

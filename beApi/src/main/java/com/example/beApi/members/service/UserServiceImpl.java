@@ -3,11 +3,11 @@ package com.example.beApi.members.service;
 
 import java.util.*;
 
-import org.springframework.http.ResponseEntity;
+import com.example.beApi.members.domain.UserDto;
+import com.example.beApi.members.domain.UserVo;
 import org.springframework.stereotype.Service;
 
 import com.example.beApi.cmm.service.AbstractService;
-import com.example.beApi.members.domain.Member;
 import com.example.beApi.members.repository.UserRepository;
 
 import lombok.Getter;
@@ -15,38 +15,45 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 
-@Setter
+
 @Getter
 @RequiredArgsConstructor
 @Service
-public class UserServiceImpl extends AbstractService<Member> implements UserService {
+public class UserServiceImpl extends AbstractService<UserVo> implements UserService {
 
-	private final UserRepository repo;
+//	private final UserRepository repo;
 
 
 
 	@Override
-	public String login(Member user) {
+	public String login(UserVo user) {
 		return null;
 	}
 
 	@Override
-	public void updateDB(String id, Member user) {
+	public void updateDB(String id, UserVo user) {
 
 	}
 
+
+
 	@Override
-	public Long save(Member member) {
+	public long signup(UserDto member) {
+		return 0L;
+	}
+
+	@Override
+	public Long save(UserVo user) {
 		return null;
 	}
 
 	@Override
-	public Optional<Member> findById(Long id) {
+	public Optional<UserVo> findById(Long id) {
 		return Optional.empty();
 	}
 
 	@Override
-	public List<Member> findAll() {
+	public List<UserVo> findAll() {
 		return null;
 	}
 
@@ -56,12 +63,12 @@ public class UserServiceImpl extends AbstractService<Member> implements UserServ
 	}
 
 	@Override
-	public Optional<Member> getOne(Long id) {
+	public Optional<UserVo> getOne(Long id) {
 		return Optional.empty();
 	}
 
 	@Override
-	public Long delete(Member member) {
+	public Long delete(UserVo user) {
 		return null;
 	}
 

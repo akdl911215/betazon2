@@ -24,8 +24,6 @@ public class File {
     @Column(name = "content")
     private String content;
 
-    @ManyToOne
-//    @JoinColumn("feeds_id")
-    Feeds feeds;
+
 
 }

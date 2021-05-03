@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.Column;
 
 @Component
-@Getter
-@Builder(access = AccessLevel.PRIVATE)
+@Data
 public class NewsDto {
 
     private Long newsId;
@@ -19,12 +18,4 @@ public class NewsDto {
     private String title;
     private String address;
 
-    public static NewsDto of(News news){
-        return NewsDto.builder()
-                .newsId(news.getNewsId())
-                .category(news.getCategory())
-                .title(news.getTitle())
-                .address(news.getAddress())
-                .build();
-    }
 }

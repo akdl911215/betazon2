@@ -34,15 +34,6 @@ public class FeedsDto implements Serializable {
 		this.hashTag = hashTag;
 		this.regDate = new Date();
 	}
-	
-	public Feeds toEntity() {
-		return  Feeds.builder()
-					 .title(title)
-					 .writer(writer)
-					 .content(content)
-					 .addLocation(addLocation)
-					 .hashTag(hashTag)
-					 .build();
-	}
+
 	
 }
