@@ -1,11 +1,7 @@
 package com.example.beApi.security.domain;
 
 import io.jsonwebtoken.*;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-
-import javax.validation.Payload;
-import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +29,7 @@ public class SecurityToken {
 
             long exirationTime = 1000 * 60L * 60L * 2L; // 토큰 유효시간 2시간
             Date ext = new Date();
-            ext.setTime((ext.getTime() + exirationTime));
+            ext.setTime(ext.getTime() + exirationTime);
             return Jwts
                     .builder()
                     .setHeader(headers)
@@ -54,6 +50,6 @@ public class SecurityToken {
         } catch (IllegalArgumentException e) {
             log.info("JWT token compact of handler are invalid");
         }
-        return null;
+        return null ;
     }
 }

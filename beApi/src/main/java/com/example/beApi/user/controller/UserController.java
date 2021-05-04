@@ -1,17 +1,19 @@
-package com.example.beApi.members.controller;
+package com.example.beApi.user.controller;
 
 import java.io.IOException;
 import java.util.List;
 
-import com.example.beApi.members.domain.UserDto;
+import com.example.beApi.user.domain.UserDto;
 import com.example.beApi.news.domain.News;
 
+import com.example.beApi.user.domain.UserVo;
 import io.swagger.annotations.*;
 import lombok.extern.java.Log;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.beApi.members.service.UserServiceImpl;
+import com.example.beApi.user.service.UserServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,22 +23,30 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/users")
 @CrossOrigin(origins="*")
 @Log
-public class MemberController {
+public class UserController {
 	
 	private final UserServiceImpl service;
-
-	@ApiOperation(value = "${UserController.signin}")
-	@ApiResponses(value = {@ApiResponse(code=400, message="Something ment wrong"),
-			@ApiResponse(code=403, message="Access Denied"),
-			@ApiResponse(code=422, message="Username is already in use")
-	})
+	private final ModelMapper modelMapper;
 
 	@PostMapping("/signup")
-	public ResponseEntity<Long> signup
-			(@ApiParam("Singup User") @RequestBody UserDto member) throws IOException {
+	@ApiOperation(value = "${UserController.signup}")
+	@ApiResponses(value = {@ApiResponse(code=400, message="Something went wrong"),
+			@ApiResponse(code=403, message="Access Denied"),
+			@ApiResponse(code=422, message="Username is already in use")})
+	public ResponseEntity<String> signup
+			(@ApiParam("Singup User") @RequestBody UserDto user) throws IOException {
+			log.info("회원가입 시작 ++++++++++++++++++++++");
+		return ResponseEntity.ok(service.signup(modelMapper.map(user, UserVo.class))); // 컴파일 된! 후에 작동.
+	}
 
-		return ResponseEntity.ok(service.signup(member));
-		//return null;
+	@PostMapping("/signin")
+	@ApiOperation(value = "${UserController.signin}")
+	@ApiResponses(value = {@ApiResponse(code=400, message="Something went wrong"),
+			@ApiResponse(code=422, message="Invalid Username / Password supplied")})
+	public ResponseEntity<UserDto> signin
+			(@RequestBody UserDto user) throws IOException {
+			log.info("++++++++++++++user = " + user);
+		return ResponseEntity.ok(service.signin(modelMapper.map(user, UserVo.class)));
 	}
 
 	@GetMapping("")

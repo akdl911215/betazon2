@@ -1,4 +1,4 @@
-package com.example.beApi.members.domain;
+package com.example.beApi.user.domain;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ public enum Role implements GrantedAuthority {
     UNKNOWN("ROLE_UNKNOWN","알수없는 권한");
 
     private final String code;
-    private final String message;
+    private final String description;
 
     public static Role of(String code){
         return Arrays.stream(Role.values())
@@ -24,6 +24,6 @@ public enum Role implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        return null;
+        return name();
     }
 }
