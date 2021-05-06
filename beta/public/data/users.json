@@ -1,0 +1,52 @@
+[
+    {
+        "userNo": 1,
+        "username": "abc",
+        "password": "$2a$10$AAzGeqpOIVuVYuDvJLhsu.AnWs99XxMSZ6BZupwgqsO6pYu4i4TB6",
+        "name": "leejunghyun",
+        "email": "akdl911215@naver.com",
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 2,
+        "username": "abcd",
+        "password": "$2a$10$jcrQdRrXXoGu6YtJSw1rNeTBGTESwaXGJrkdy37by/xKCIrTt2zES",
+        "name": "leejunghyun2",
+        "email": "2akdl911215@naver.com",
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 3,
+        "username": "abcde",
+        "password": "$2a$10$G/odrPb5t.mo8HVq01o5yOUJb12q5QQhmTcHH8640uPaT5XwlgkUa",
+        "name": "leejunghyun3",
+        "email": "3akdl911215@naver.com",
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 4,
+        "username": "abcdef",
+        "password": "$2a$10$FKGsS0Z8N3Um.5N2onaSJu9.g6iNmqS6PfMB7Zcz2KnJvcwzMuN1q",
+        "name": "leejunghyun4",
+        "email": "4akdl911215@naver.com",
+        "roles": [
+            "USER"
+        ]
+    },
+    {
+        "userNo": 5,
+        "username": "abcdefg",
+        "password": "$2a$10$OfNmAfj6WG4/wmW.k/JYC.B5TUNMlrya7FuE.TZG2mJE8zMiuFQYy",
+        "name": "leejunghyun5",
+        "email": "5akdl911215@naver.com",
+        "roles": [
+            "USER"
+        ]
+    }
+]

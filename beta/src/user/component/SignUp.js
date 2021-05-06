@@ -18,7 +18,7 @@ const SignUp = () => {
             const { value, name } = e.target;
             setInputs({
                 ...inputs,
-                [name]: value,
+                [name]: value, // [name] 의 [] 요소를 의미 //[name]: value 가 기존것과 합치는것. 기존에 존재하는것은 변경이된다
             });
         },
         [inputs]

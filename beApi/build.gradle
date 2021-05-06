@@ -19,7 +19,8 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.4.5'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.4'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.4.4'
-	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.2'
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.0.0-alpha'
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.4'
@@ -36,9 +37,13 @@ dependencies {
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
 	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
-	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.2'
+
+	implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '4.4.0'
+	implementation group: 'com.querydsl', name: 'querydsl-apt', version: '4.4.0'
+	implementation group: 'org.javassist', name: 'javassist', version: '3.27.0-GA'
+
 	test {
 		useJUnitPlatform()
 	}

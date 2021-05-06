@@ -22,6 +22,9 @@ const HomeMainNavi = () => {
                     <div className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-right">
                             <li>
+                                <Link to={'user/component/user-list'}>유저리스트</Link>
+                            </li>
+                            <li>
                                 <Link to={'user/component/login'}>로그인</Link>
                             </li>
                             <li>

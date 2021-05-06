@@ -57,4 +57,10 @@ public class UserServiceImpl  implements UserService {
 			throw new SecurityRuntimeException("Invalid Username / Password supplied", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 	}
+
+	@Override
+	public List<UserVo> findAll() {
+		return userRepository.findAll();
+	}
 }
+

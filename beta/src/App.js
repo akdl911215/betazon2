@@ -8,7 +8,7 @@ import { Counter, CounterContainer } from 'counter/index';
 // import {  } from 'feedBoard/index';
 // import {  } from 'newProduct/index';
 import { ReviewItemApp, ReviewItem } from 'reviewItem/index';
-import { Login, SignUp, UserDetail } from 'user/index';
+import { Login, SignUp, UserDetail, UserList } from 'user/index';
 import { TodoApp } from 'todo/index';
 import { Route } from 'react-router-dom';
 
@@ -26,6 +26,7 @@ const App = () => {
             <Route exact path="/user/component/login" component={Login}></Route>
             <Route exact path="/user/component/sign-up" component={SignUp}></Route>
             <Route exact path="/user/component/user-detail" component={UserDetail}></Route>
+            <Route exact path="/user/component/user-list" component={UserList}></Route>
 
             <Route exact path="/common/component/home-main-navi" component={HomeMainNavi}></Route>
             <Route exact path="/common/component/home-main-footer" component={HomeMainFooter}></Route>

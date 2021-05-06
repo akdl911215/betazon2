@@ -21,7 +21,6 @@ import lombok.RequiredArgsConstructor;
 @Api(tags = "users") // user를 담당하는 스웨거
 @RequiredArgsConstructor
 @RequestMapping("/users")
-@CrossOrigin(origins="*")
 @Log
 public class UserController {
 	
@@ -34,7 +33,7 @@ public class UserController {
 			@ApiResponse(code=403, message="Access Denied"),
 			@ApiResponse(code=422, message="Username is already in use")})
 	public ResponseEntity<String> signup
-			(@ApiParam("Singup User") @RequestBody UserDto user) throws IOException {
+			(@ApiParam("Signup User") @RequestBody UserDto user) throws IOException {
 			log.info("회원가입 시작 ++++++++++++++++++++++");
 		return ResponseEntity.ok(service.signup(modelMapper.map(user, UserVo.class))); // 컴파일 된! 후에 작동.
 	}
@@ -49,11 +48,11 @@ public class UserController {
 		return ResponseEntity.ok(service.signin(modelMapper.map(user, UserVo.class)));
 	}
 
-	@GetMapping("")
-	public ResponseEntity<List<News>> fetch
-			(@RequestBody News news){
-		return ResponseEntity.ok(null);
+	@GetMapping("/fetch")
+	public ResponseEntity<List<UserVo>> fetch() {
+		return ResponseEntity.ok(service.findAll());
 	}
+
 
 
 	@PutMapping("")

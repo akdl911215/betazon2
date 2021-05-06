@@ -1,16 +1,16 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/root
-    username: root
-    password: 456123
+    url: jdbc:mariadb://bit911215.cebga7nnwvvl.ap-northeast-2.rds.amazonaws.com:3306/bit911215
+    username: bit911215
+    password: Wjdgus2580
   jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
     generate-ddl: true
     show-sql: true
-    hibernate:
-      ddl-auto: update
+    properties:
+      hibernate.hbm2ddl.auto: update
+  jwt:
+    secret: jwtSecret
 
 
 UserController:

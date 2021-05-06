@@ -4,17 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { combineReducers, createStore } from 'redux';
-import counterReducer from 'counter/reducer/Counter.reducer';
-import counterSlice from 'counter/reducer/counter.slice';
-import reviewItems from 'reviewItem/reducer/reviewItem.reducer';
-import todos from 'todo/reducer/todo.reducer';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-
-const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer, todos });
-// const store = createStore(rootReducer); 바닐라 리덕스
-const store = configureStore({ reducer: rootReducer });
+import store from 'store/index';
 
 ReactDOM.render(
     <Provider store={store}>
