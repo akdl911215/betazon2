@@ -1,17 +1,15 @@
 spring:
   datasource:
     url: jdbc:mariadb://bit911215.cebga7nnwvvl.ap-northeast-2.rds.amazonaws.com:3306/bit911215
+    driver-class-name: org.mariadb.jdbc.Driver
     username: bit911215
     password: Wjdgus2580
   jpa:
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    open-in-view: false
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: crete-drop
-  jwt:
-    secret: jwtSecret
-
+      ddl-auto: update
 
 UserController:
   signup: Creates user and returns its JWT token

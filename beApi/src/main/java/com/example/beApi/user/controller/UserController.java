@@ -17,6 +17,8 @@ import com.example.beApi.user.service.UserServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @Api(tags = "users") // user를 담당하는 스웨거
 @RequiredArgsConstructor
@@ -26,6 +28,7 @@ public class UserController {
 	
 	private final UserServiceImpl service;
 	private final ModelMapper modelMapper;
+
 
 	@PostMapping("/signup")
 	@ApiOperation(value = "${UserController.signup}")
