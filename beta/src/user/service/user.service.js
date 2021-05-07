@@ -1,11 +1,7 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 
-export const getList = () => {
-    alert(`2 서비스 내부`);
-    axios.get('http://localhost:8080/users');
-};
+const findAll = () => axios.get('http://localhost:8080/users/findall');
+const singup = () => axios.get("'http://localhost:8080/users/signup");
 
-// export const getUsers = createAsyncThunk('GET_USERS', async () => {
-//     const response = await axios.get('http://localhost:8080/users');
-//     return response.data;
-// });
+export default { findAll, singup };

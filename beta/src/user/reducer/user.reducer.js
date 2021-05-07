@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import getList from '../service/user.service';
+import { UserService } from 'user/index';
 
 export const getUsersList = createAsyncThunk('users/findAll', async () => {
-    const response = await getList();
+    // alert(`+++++++++ 1버전에 출력?`);
+    const response = await UserService.findAll();
     return response.data;
 });
 
@@ -23,5 +24,5 @@ const userSlice = createSlice({
     },
 });
 const { actions, reducer } = userSlice;
-export const {} = actions;
+// export const { addCase } = actions;
 export default reducer;

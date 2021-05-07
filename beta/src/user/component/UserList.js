@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import getUsersList from 'user/reducer/user.reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUsersList } from '../reducer/user.reducer';
 
 const UserList = () => {
     const dispatch = useDispatch();
@@ -11,6 +11,13 @@ const UserList = () => {
         alert(`1. useEffect `);
         dispatch(getUsersList());
     }, []);
+
+    const users = useSelector((state) => {
+        // alert(`UserList = JSON.stringify(state) = ${JSON.stringify(state)}`);
+
+        console.log('state: ' + JSON.stringify(state));
+        return state.users;
+    });
 
     return (
         <>
@@ -20,28 +27,26 @@ const UserList = () => {
                         <th>유저 넘버</th>
                         <th>아이디</th>
                         <th>비밀번호</th>
-                        <th>email</th>
-                        <th>주소</th>
-                        <th>핸드폰 번호</th>
-                        <th>상세 보기</th>
+                        <th>이름</th>
+                        <th>E-메일</th>
+                        <th>롤</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {uss.map((uss) => {
+                    {users.map((user, id) => {
                         return (
-                            <tr key={uss.feedNo}>
-                                <td>{uss.feedNo}</td>
-                                <td>{uss.title}</td>
-                                <td>{uss.writer}</td>
-                                <td>{uss.content}</td>
-                                <td>{uss.addLocation}</td>
-                                <td>{uss.hashTag}</td>
-                                <td>{uss.regDate}</td>
+                            <tr key={id}>
+                                <td>{user.userNo}</td>
+                                <td>{user.username}</td>
+                                <td>{user.password}</td>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.roles}</td>
                                 <td>
-                                    <Link to={`/FeedBoardRead/${uss.feedNo}`} className="linkto-uss">
+                                    <Link to={`/FeedBoardRead/${user.feedNo}`} className="linkto-uss">
                                         <button
                                             onClick={() => {
-                                                localStorage.setItem('select', `${uss.feedNo}`);
+                                                localStorage.setItem('select', `${user.feedNo}`);
                                             }}
                                         >
                                             자세히 보기

@@ -1,15 +1,15 @@
 //store/index.js
-import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { applyMiddleware, combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import counterReducer from 'counter/reducer/Counter.reducer';
 import counterSlice from 'counter/reducer/counter.slice';
 import reviewItems from 'reviewItem/reducer/reviewItem.reducer';
 import todos from 'todo/reducer/todo.reducer';
-import user from 'user/reducer/users.reducer';
+import users from 'user/reducer/user.reducer';
 
-const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer, todos, user });
+const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer, todos, users });
 
 export default configureStore({
-    rootReducer,
+    reducer: rootReducer,
     middleware: [...getDefaultMiddleware(), logger],
 });
