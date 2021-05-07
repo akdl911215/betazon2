@@ -5,9 +5,9 @@ import counterReducer from 'counter/reducer/Counter.reducer';
 import counterSlice from 'counter/reducer/counter.slice';
 import reviewItems from 'reviewItem/reducer/reviewItem.reducer';
 import todos from 'todo/reducer/todo.reducer';
-import users from 'users/reducer/users.reducer';
+import user from 'user/reducer/users.reducer';
 
-const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer, todos, users });
+const rootReducer = combineReducers({ reviewItems, counterSlice, counterReducer, todos, user });
 
 export default configureStore({
     rootReducer,

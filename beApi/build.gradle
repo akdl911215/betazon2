@@ -19,7 +19,7 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.4.5'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.4'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.4.4'
-	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.0.0-alpha'
+//	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.0.0-alpha'
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
@@ -43,6 +43,8 @@ dependencies {
 	implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '4.4.0'
 	implementation group: 'com.querydsl', name: 'querydsl-apt', version: '4.4.0'
 	implementation group: 'org.javassist', name: 'javassist', version: '3.27.0-GA'
+	implementation group: 'javassist', name: 'javassist', version: '3.12.1.GA'
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '6.0.0.Alpha7', ext: 'pom'
 
 	test {
 		useJUnitPlatform()

@@ -5,6 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @NoArgsConstructor
 @Data
@@ -13,6 +16,7 @@ import java.util.List;
 public class UserVo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_no")
     private long userNo;
     @Column(unique = true, nullable = false)
     private String username;

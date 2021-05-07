@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-const API_URL = `/data/user.json`;
-
-const userList = () => {
-    axios.get(API_URL, { userId, username, password, email, name });
+export const getList = () => {
+    alert(`2 서비스 내부`);
+    axios.get('http://localhost:8080/users');
 };
+
+// export const getUsers = createAsyncThunk('GET_USERS', async () => {
+//     const response = await axios.get('http://localhost:8080/users');
+//     return response.data;
+// });

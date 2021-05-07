@@ -16,6 +16,8 @@ import java.io.IOException;
 public class SecurityFilter extends OncePerRequestFilter {
     private final SecurityProvider provider;
 
+
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = provider.resolveToken(request);

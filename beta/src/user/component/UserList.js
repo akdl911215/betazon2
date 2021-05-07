@@ -2,11 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import getUsersList from 'user/reducer/user.reducer';
 
 const UserList = () => {
-    const [uss, setUss] = useState([]);
-
-    const fetchList = () => {};
+    const dispatch = useDispatch();
+    useEffect(() => {
+        alert(`1. useEffect `);
+        dispatch(getUsersList());
+    }, []);
 
     return (
         <>

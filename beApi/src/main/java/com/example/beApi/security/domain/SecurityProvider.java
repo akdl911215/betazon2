@@ -24,6 +24,7 @@ import java.util.stream.Collectors;
 @Component
 public class SecurityProvider implements AuthenticationProvider {
 
+
     @Value("${security.jwt.token.secret-key:secret-key")
     private String secretKey;
 

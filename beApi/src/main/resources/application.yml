@@ -7,8 +7,8 @@ spring:
     database-platform: org.hibernate.dialect.MariaDB103Dialect
     generate-ddl: true
     show-sql: true
-    properties:
-      hibernate.hbm2ddl.auto: update
+    hibernate:
+      ddl-auto: crete-drop
   jwt:
     secret: jwtSecret
 
