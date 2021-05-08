@@ -1,57 +1,45 @@
 //import '../component/signupForm.css';
 import React, { useCallback, useState } from 'react';
 import axios from 'axios';
+import { getSignUp } from '../reducer/user.reducer';
+import { useDispatch } from 'react-redux';
 
 const SignUp = () => {
+    const dispatch = useDispatch();
+
     const [inputs, setInputs] = useState({
         username: '',
         password: '',
-        userEmail: '',
-        userAddress: '',
-        userPhoneNumber: '',
+        name: '',
+        email: '',
     });
 
-    const { username, password, userEmail, userAddress, userPhoneNumber } = inputs;
-
+    //   [.target.name]: e.target.value, : [name] 의 [] 요소를 의미 //[name]: value 가 기존것과 합치는것. 기존에 존재하는것은 변경이된다
     const handleChange = useCallback(
         (e) => {
-            const { value, name } = e.target;
+            // const { value, name } = e.target;
             setInputs({
                 ...inputs,
-                [name]: value, // [name] 의 [] 요소를 의미 //[name]: value 가 기존것과 합치는것. 기존에 존재하는것은 변경이된다
+                [e.target.name]: e.target.value,
             });
         },
         [inputs]
     );
 
-    const handleSubmit = useCallback(
-        (e) => {
-            alert('회원가입 버튼누름');
+    const handleSubmit = useCallback((e) => {
+        alert('회원가입 버튼누름');
 
-            e.preventDefault();
-            console.log('작동');
+        e.preventDefault();
+        console.log('작동');
+        dispatch(inputs);
 
-            alert('ID : ' + username);
-            alert('비밀번호 : ' + password);
-            alert('email : ' + userEmail);
-            alert('주소 : ' + userAddress);
-            alert('핸드폰 번호 : ' + userPhoneNumber);
-
-            axios
-                .post('http://localhost:8080/users/insert', {
-                    username,
-                    password,
-                    userEmail,
-                    userAddress,
-                    userPhoneNumber,
-                })
-                .then((res) => {
-                    console.log(res);
-                })
-                .catch((err) => console.log(err));
-        },
-        [username, password, userEmail, userAddress, userPhoneNumber]
-    );
+        axios
+            .post('http://localhost:8080/users/signup', {})
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <form onSubmit={handleSubmit} method="post">
@@ -70,20 +58,15 @@ const SignUp = () => {
                 </label>
                 <input type="password" onChange={handleChange} placeholder="Password" name="password" value={password} required />
 
-                <label htmlFor="userEmail">
-                    <b>Email</b>
+                <label htmlFor="name">
+                    <b>이름</b>
                 </label>
-                <input type="text" onChange={handleChange} placeholder="UserEmail" name="userEmail" value={userEmail} required />
+                <input type="text" onChange={handleChange} placeholder="Name" name="name" value={name} required />
 
-                <label htmlFor="userAddress">
-                    <b>주소</b>
+                <label htmlFor="email">
+                    <b>E-mail</b>
                 </label>
-                <input type="text" onChange={handleChange} placeholder="UserAddress" name="userAddress" value={userAddress} required />
-
-                <label htmlFor="userPhoneNumber">
-                    <b>핸드폰 번호</b>
-                </label>
-                <input type="text" onChange={handleChange} placeholder="UserPhoneNumber" name="userPhoneNumber" value={userPhoneNumber} required />
+                <input type="text" onChange={handleChange} placeholder="Email" name="email" value={email} required />
 
                 <div className="clearfix">
                     <button type="button" className="cancelButton">
