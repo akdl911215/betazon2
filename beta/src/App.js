@@ -10,6 +10,7 @@ import { Counter, CounterContainer } from 'counter/index';
 import { ReviewItemApp, ReviewItem } from 'reviewItem/index';
 import { Login, SignUp, UserDetail, UserList } from 'user/index';
 import { TodoApp } from 'todo/index';
+import { withoutRedux1 } from 'collorItem/index';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -38,6 +39,8 @@ const App = () => {
             <Route exact path="/reviewItem/container/review-item-app" component={ReviewItemApp}></Route>
 
             <Route exact path="/todo/continer/todo-app" component={TodoApp}></Route>
+
+            <Route exact path="/todo/continer/without-redux1" component={withoutRedux1}></Route>
         </div>
     );
 };

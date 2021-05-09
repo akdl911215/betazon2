@@ -8,10 +8,10 @@ const SignUp = () => {
     const dispatch = useDispatch();
 
     const [inputs, setInputs] = useState({
-        username: '',
-        password: '',
-        name: '',
-        email: '',
+        // username: '',
+        // password: '',
+        // name: '',
+        // email: '',
     });
 
     //   [.target.name]: e.target.value, : [name] 의 [] 요소를 의미 //[name]: value 가 기존것과 합치는것. 기존에 존재하는것은 변경이된다
@@ -51,22 +51,22 @@ const SignUp = () => {
                 <label htmlFor="username">
                     <b>아이디</b>
                 </label>
-                <input type="text" onChange={handleChange} placeholder="Username" name="username" value={username} required />
+                <input type="text" onChange={handleChange} placeholder="Username" name="username" value={inputs} required />
 
                 <label htmlFor="password">
                     <b>비밀번호</b>
                 </label>
-                <input type="password" onChange={handleChange} placeholder="Password" name="password" value={password} required />
+                <input type="password" onChange={handleChange} placeholder="Password" name="password" value={inputs} required />
 
                 <label htmlFor="name">
                     <b>이름</b>
                 </label>
-                <input type="text" onChange={handleChange} placeholder="Name" name="name" value={name} required />
+                <input type="text" onChange={handleChange} placeholder="Name" name="name" value={inputs} required />
 
                 <label htmlFor="email">
                     <b>E-mail</b>
                 </label>
-                <input type="text" onChange={handleChange} placeholder="Email" name="email" value={email} required />
+                <input type="text" onChange={handleChange} placeholder="Email" name="email" value={inputs} required />
 
                 <div className="clearfix">
                     <button type="button" className="cancelButton">

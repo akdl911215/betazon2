@@ -57,6 +57,9 @@ const HomeMainNavi = () => {
                             <li>
                                 <Link to={'/todo/continer/todo-app'}>TodoApp</Link>
                             </li>
+                            <li>
+                                <Link to={'/todo/continer/without-redux1'}>withoutRedux1</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

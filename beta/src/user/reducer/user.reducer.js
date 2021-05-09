@@ -24,10 +24,6 @@ const userSlice = createSlice({
                 alert(`3. 리덕스 내부 회원 목록 조회 성공 ${payload}`);
                 return [...payload];
             })
-            .addSignUp(getSignUp.fulfilled, (state, { payload }) => {
-                alert(`회원가입 성공 ${payload}`);
-                return [...payload];
-            })
             .addMatcher(isRejectedAction, () => {})
             .addDefaultCase((state, action) => {});
     },
