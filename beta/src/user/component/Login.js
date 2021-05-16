@@ -1,7 +1,13 @@
 import React from 'react';
 import 'user/style/Login.css';
+import userService, { getSignIn } from 'user/service/user.service';
 
 const Login = () => {
+    const login = (e) => {
+        e.preventDefault();
+        userService.getSignIn();
+    };
+
     return (
         <>
             <form action="action_page.php" method="post">

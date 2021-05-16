@@ -37,7 +37,7 @@ public class NewsController {
         return ResponseEntity.ok(newsService.saveAll(crawler));
     }
 
-    @PostMapping("")
+    @PostMapping("{categoty}")
     public ResponseEntity<List<News>> post
         (final Pageable pageable){
             return ResponseEntity.ok(null);

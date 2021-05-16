@@ -29,6 +29,7 @@ public class CrawlerServiceImpl implements CrawlerService {
         Document document = connectUrl(cralwer.getUrl()); // "https://news.daum.net/society"
 //        List<Cralwer.Bugs>
 
+
         Elements elements = document.select(cralwer.getCssQuery());
         // "div.cont_aside>ol>li>strong>a"
 
